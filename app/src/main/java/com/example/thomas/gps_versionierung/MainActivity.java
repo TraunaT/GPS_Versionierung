@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
     @Override
     protected void onResume() {
         super.onResume();
+        ActivityCompat.requestPermissions(this, new String [] {Manifest.permission.ACCESS_FINE_LOCATION},1);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity implements LocationListener 
         tv_latitude.setText(location.getLatitude()+"");
         tv_longitude.setText(location.getLongitude()+"");
         tv_altitude.setText(location.getAltitude()+"");
-        tv_date.setText((CharSequence) new Date());
+        tv_date.setText("ljashdöogh");
     }
 
     @Override
